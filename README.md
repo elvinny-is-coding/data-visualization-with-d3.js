@@ -8,7 +8,7 @@ Welcome to **COS30045**! 🎉 This project aims to visualize data's using D3 Jav
 
 ## 🛠️ Features
 
-- **Lab 1**: A crash course on the basic of HTML, CSS and Javascript. 🚀
+- **Lab 1**: Crash course on the basic of HTML, CSS and Javascript. 🚀
 - **Lab 2**: Application of D3 JS library. 💡
 
 ## 📦 Installation
