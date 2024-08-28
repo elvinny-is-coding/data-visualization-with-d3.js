@@ -1,22 +1,19 @@
-# 🚀 Project Name
+# 🚀 Data Visualization
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) 
-[![GitHub stars](https://img.shields.io/github/stars/your-username/your-repo.svg)](https://github.com/your-username/your-repo/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/your-username/your-repo.svg)](https://github.com/your-username/your-repo/network)
 
 ## 🌟 Introduction
 
-Welcome to **Project Name**! 🎉 This project aims to [briefly describe what your project does]. Whether you're a developer, designer, or someone interested in tech, this repository has something for you. 
+Welcome to **COS30045**! 🎉 This project aims to visualize data's using D3 Javascript library. Observe the collaboration during my lab session at INTI International College Subang! 
 
 ## 🛠️ Features
 
-- **Feature 1**: Explanation of the first feature. 🚀
-- **Feature 2**: Explanation of the second feature. 💡
-- **Feature 3**: Explanation of the third feature. 🌍
+- **Lab 1**: A crash course on the basic of HTML, CSS and Javascript. 🚀
+- **Lab 2**: Application of D3 JS library. 💡
 
 ## 📦 Installation
 
-To get started with **Project Name**, follow these steps:
+To get started with **Data Visualization in D3 JS**, follow these steps:
 
 1. **Clone the repository**: 
     ```bash
@@ -35,9 +32,3 @@ To get started with **Project Name**, follow these steps:
     npm start
     ```
 
-## 💻 Usage
-
-Describe how to use the project:
-
-```bash
-command-to-run-project
