@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Data Visualisation Exercise 1" />
+    <meta name="keywords" content="HTML, CSS" />
+    <meta name="author" content="Elvin Ng Eng Kit" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+
+    <title>Task 1.1 HTML and CSS Demo Page</title>
+    <!--Insert description of exercise  -->
+
+    <style></style>
+  </head>
+
+  <body>
+    <h1>The D3 Journey starts here...</h1>
+
+    <script>
+      var w = 500;
+      var h = 100;
+
+      var padding = 3;
+
+      var dataset = [
+        [5, 20, 12],
+        [400, 90, 22],
+        [250, 20, 23],
+        [300, 50, 12],
+        [100, 95, 16],
+        [410, 12, 12],
+        [406, 44, 10],
+      ];
+
+      var svg = d3
+        .select("body")
+        .append("svg")
+        .attr("width", w)
+        .attr("height", h)
+        .attr("fill", "red");
+
+      svg
+        .selectAll("circle")
+        .data(dataset)
+        .enter()
+        .append("circle")
+        .attr("cx", function (d, i) {
+          return d[0];
+        })
+        .attr("cy", function (d) {
+          return d[1];
+        })
+        .attr("r", function (d) {
+          return d[2];
+        })
+        .attr("fill", "slategrey");
+
+      svg
+        .selectAll("text")
+        .data(dataset)
+        .enter()
+        .append("text")
+        .text(function (d) {
+          return d[0] + "," + d[1];
+        })
+        .attr("x", function (d, i) {
+          return d[0] + 10;
+        })
+        .attr("y", function (d) {
+          return d[1];
+        });
+    </script>
+
+    <br />
+
+    <bf>
+      <footer>COS30045 Data Visualization<br />Elvin Ng Eng Kit</footer>
+    </bf>
+  </body>
+</html>

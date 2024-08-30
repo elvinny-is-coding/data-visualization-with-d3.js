@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Data Visualisation Exercise 1" />
+    <meta name="keywords" content="HTML, CSS" />
+    <meta name="author" content="Elvin Ng Eng Kit" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+
+    <title>Task 1.1 HTML and CSS Demo Page</title>
+    <!--Insert description of exercise  -->
+
+    <style></style>
+  </head>
+
+  <body>
+    <h1>The D3 Journey starts here...</h1>
+
+    <script>
+      var w = 500;
+      var h = 100;
+
+      var padding = 3;
+
+      var dataset = [14, 5, 26, 23, 9, 5, 23, 30, 23, 12, 34, 21, 11];
+
+      var svg = d3
+        .select("body")
+        .append("svg")
+        .attr("width", w)
+        .attr("height", h)
+        .attr("fill", "red");
+
+      svg
+        .selectAll("rect")
+        .data(dataset)
+        .enter()
+        .append("rect")
+        .attr("x", function (d, i) {
+          return i * (w / dataset.length);
+        })
+        .attr("y", function (d) {
+          return h - d * 4;
+        })
+        .attr("width", function (d) {
+          return w / dataset.length - padding;
+        })
+        .attr("height", function (d) {
+          return d * 4;
+        });
+    </script>
+
+    <br />
+
+    <bf>
+      <footer>COS30045 Data Visualization<br />Elvin Ng Eng Kit</footer>
+    </bf>
+  </body>
+</html>
