@@ -7,7 +7,7 @@ function init() {
   });
 
   var w = 500;
-  var h = 100;
+  var h = 120;
 
   var padding = 3;
 
@@ -42,8 +42,6 @@ function init() {
 
         const colorIntensity = Math.min(Math.round(normalizedValue * 100), 255);
 
-        console.log(colorIntensity);
-
         return `rgb(${colorIntensity}, ${colorIntensity}, 255)`;
       });
 
@@ -59,10 +57,10 @@ function init() {
         return i * (w / dataset.length) + (w / dataset.length - padding) / 2; // Center the text
       })
       .attr("y", function (d) {
-        return h - d.wombats * 4 - 5; // Position text above the bar
+        return h - d.wombats * 4 - 5;
       })
-      .attr("text-anchor", "middle") // Center the text horizontally
-      .attr("fill", "black"); // Text color
+      .attr("text-anchor", "middle")
+      .attr("fill", "black");
   }
 }
 
