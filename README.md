@@ -23,11 +23,7 @@ To get started with **Data Visualization in D3 JS**, follow these steps:
     ```bash
     cd your-repo
     ```
-3. **Install dependencies**: 
-    ```bash
-    npm install
-    ```
-4. **Run the application**: 
+3. **Run the application**: 
     ```bash
     npm start
     ```
