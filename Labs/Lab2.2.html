@@ -46,9 +46,11 @@
       var svg = d3
         .select("body")
         .append("svg")
+        .attr("x", 0)
+        .attr("y", 0)
         .attr("width", w)
         .attr("height", h)
-        .attr("fill", "red");
+        .attr("fill", "cyan");
 
       svg
         .selectAll("rect")
@@ -67,6 +69,35 @@
         .attr("height", function (d) {
           return d * 4;
         });
+
+      // Define scales
+      const xScale = d3
+        .scaleBand()
+        .domain(d3.range(dataset.length))
+        .range([0, w])
+        .padding(0.1);
+
+      const yScale = d3
+        .scaleLinear()
+        .domain([0, d3.max(dataset)])
+        .range([h, 50]);
+
+      svg
+        .selectAll("text")
+        .data(dataset)
+        .enter()
+        .append("text")
+        .text(function (d) {
+          return d;
+        })
+        .attr("x", function (d, i) {
+          return xScale(i) + xScale.bandwidth() / 2; // Center text horizontally
+        })
+        .attr("y", function (d) {
+          return yScale(d) - 5; // Position text just above the bar
+        })
+        .attr("text-anchor", "middle") // Align the text to the center of the bar
+        .attr("fill", "black");
     </script>
 
     <br />
