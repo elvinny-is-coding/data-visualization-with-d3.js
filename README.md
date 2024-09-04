@@ -10,6 +10,7 @@ Welcome to **COS30045**! 🎉 This project aims to visualize data's using D3 Jav
 
 - **Lab 1**: Crash course on the basic of HTML, CSS and Javascript. 🚀
 - **Lab 2**: Application of D3 JS library. 💡
+- **Lab 3**: Scaling SVG and Customizing Linear Scales. 📏
 
 ## 📦 Installation
 
