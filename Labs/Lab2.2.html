@@ -37,7 +37,7 @@
 
     <script>
       var w = 500;
-      var h = 100;
+      var h = 200;
 
       var padding = 3;
 
@@ -91,12 +91,12 @@
           return d;
         })
         .attr("x", function (d, i) {
-          return xScale(i) + xScale.bandwidth() / 2; // Center text horizontally
+          return i * (w / dataset.length) + (w / dataset.length - padding) / 2;
         })
         .attr("y", function (d) {
-          return yScale(d) - 5; // Position text just above the bar
+          return h - d * 4 + 14;
         })
-        .attr("text-anchor", "middle") // Align the text to the center of the bar
+        .attr("text-anchor", "middle")
         .attr("fill", "black");
     </script>
 
