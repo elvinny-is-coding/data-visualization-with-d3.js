@@ -79,6 +79,7 @@ header {
 
 .sidebar-content h2 {
   margin-top: 0;
+  font-size: 1.8em;
 }
 
 .accordion {
@@ -97,7 +98,8 @@ header {
   text-align: left;
   outline: none;
   width: 100%;
-  font-size: 1.1em;
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 .accordion-header:hover {
@@ -110,6 +112,7 @@ header {
   overflow: hidden;
   transition: max-height 0.2s ease-out;
   padding-left: 10px;
+  font-size: 1.5em;
 }
 
 .accordion-content ul {
@@ -128,14 +131,14 @@ main {
     100vh - 50px
   ); /* Subtracts header height to ensure no overflow */
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   padding: 0 20px;
 }
 
 .hero-banner {
   width: 100%;
-  height: 100%;
+  height: 90%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -174,6 +177,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 70%;
 }
 
 .hero-image {
@@ -207,4 +211,61 @@ main {
   .hero-image-container {
     margin-top: 20px;
   }
+}
+
+.navigation-panel {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border: #333 solid 1px;
+  border-radius: 5px;
+}
+
+.left-side,
+.right-side {
+  padding: 20px;
+}
+
+.left-side {
+  width: 30%;
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.right-side {
+  width: 70%;
+  background-color: #e9ecef;
+}
+
+.left-side ul,
+.right-side ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.left-side li,
+.right-side li {
+  font-size: 2em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  padding: 5%;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+}
+
+.left-side li a,
+.right-side li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.left-side li:hover,
+.right-side li:hover {
+  background-color: #e0e0e0;
+}
+
+#sub-labs-list li:hover {
+  background-color: rgb(94, 108, 125);
+  color: #fff;
 }

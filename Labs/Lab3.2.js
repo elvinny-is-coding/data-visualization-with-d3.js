@@ -68,5 +68,5 @@ svg
 
 svg
   .append("g")
-  .attr("transform", "translate(" + (padding + 5) + ",0)")
+  .attr("transform", "translate(" + padding + ",0)")
   .call(yAxis);
