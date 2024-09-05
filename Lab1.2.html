@@ -2,18 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="LAB 1.1 HTML and CSS Review" />
+    <meta name="description" content="LAB 1.2 JavaScript" />
     <meta name="keywords" content="HTML, CSS" />
     <meta name="author" content="Elvin Ng Eng Kit" />
 
     <base href="/Data-Visualization/" />
 
     <!-- labs -->
-    <link rel="stylesheet" href="Homepage/labs_styles.css" />
+    <link rel="stylesheet" href="labs_styles.css" />
 
     <!-- header -->
-    <link rel="stylesheet" href="Homepage/styles.css" />
-    <script src="Homepage/header.js" defer></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="header.js" defer></script>
 
     <!-- font -->
     <link
@@ -21,7 +21,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
 
-    <title>LAB 1.1 HTML and CSS Review</title>
+    <title>LAB 1.2 JavaScript</title>
   </head>
 
   <body>
@@ -47,21 +47,30 @@
       <li>joy and happiness.</li>
     </ul>
 
+    <div style="display: flex">
+      <button
+        class="btn1 common-btn"
+        onclick="show('/COS30045 1.1 Resources/2019.jpg', 'Fig 1. Comparison of Pet Ownership in 2019.' )"
+      >
+        2019
+      </button>
+      <button
+        class="btn2 common-btn"
+        onclick="show('/COS30045 1.1 Resources/2021.jpg', 'Fig 2. Comparison of Pet Ownership in 2021.' )"
+      >
+        2021
+      </button>
+      <button
+        class="btn3 common-btn"
+        onclick="show('/COS30045 1.1 Resources/Both.jpg', 'Fig 3. Comparison of Pet Ownership in 2019 and 2021.' )"
+      >
+        Both
+      </button>
+    </div>
+
     <figure>
-      <img
-        src="/COS30045 1.1 Resources/pet_ownership_in_australia_table.png"
-        alt="Table of Pet ownership in Australia"
-      />
-      <figcaption>
-        <i
-          >Fig 1. Comparison of Pet Ownership in 2019 and 2021. Data Source:
-          <a
-            href="https://animalmedicinesaustralia.org.au/wp-content/uploads/2021/08/AMAU005-PATP-Report21_v1.41_WEB.pdf"
-            target="_blank"
-            >Animal Medicines Australia Report</a
-          ></i
-        >
-      </figcaption>
+      <img id="image" src="" />
+      <figcaption id="image_cap"></figcaption>
     </figure>
 
     <p>
@@ -73,3 +82,14 @@
   </body>
   <footer>COS30045 Data Visualization<br />Elvin Ng Eng Kit</footer>
 </html>
+
+<script>
+  function show(pngName, figCaption) {
+    console.log("test");
+    image = document.getElementById("image");
+    image_cap = document.getElementById("image_cap");
+
+    image.src = pngName;
+    image_cap.innerHTML = figCaption;
+  }
+</script>
