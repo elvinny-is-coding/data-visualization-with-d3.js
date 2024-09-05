@@ -1,5 +1,5 @@
 function init() {
-  d3.csv("/COS30045 1.1 Resources/wombats.csv").then(function (data) {
+  d3.csv("COS30045 1.1 Resources/wombats.csv").then(function (data) {
     console.log(data);
     wombatSighting = data;
 
