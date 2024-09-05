@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
     content.forEach((item) => {
       const li = document.createElement("li");
       li.textContent = `Lab ${item}`;
-      li.setAttribute("data-url", `/Labs/Lab${item}.html`); // Store URL in data attribute
+      li.setAttribute("data-url", `/Data-Visualization/Lab${item}.html`); // Store URL in data attribute
       subLabsList.appendChild(li);
     });
   };
