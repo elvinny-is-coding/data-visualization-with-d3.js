@@ -114,3 +114,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+if (
+  window.location.hostname !== "localhost" &&
+  window.location.hostname !== "127.0.0.1"
+) {
+  const base = document.createElement("base");
+  base.href = "https://yourusername.github.io/Data-Visualization/";
+  document.head.appendChild(base);
+}
