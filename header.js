@@ -120,6 +120,6 @@ if (
   window.location.hostname !== "127.0.0.1"
 ) {
   const base = document.createElement("base");
-  base.href = "https://elvinny-is-coding.github.io/Data-Visualization/";
+  base.href = "/Data-Visualization/";
   document.head.appendChild(base);
 }
