@@ -12,6 +12,9 @@ Welcome to **COS30045**! 🎉 This project aims to visualize data's using D3 Jav
 - **Lab 2**: Application of D3 JS library. 💡
 - **Lab 3**: Scaling SVG and Customizing Linear Scales. 📏
 
+## 🌟 Click Me! 🌐 [link](https://elvinny-is-coding.github.io/Data-Visualization/index.html)
+Eager to explore? Tap the link above to visit the page! 🚀
+
 ## 📦 Installation
 
 To get started with **Data Visualization in D3 JS**, follow these steps:
