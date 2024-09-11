@@ -15,20 +15,4 @@ Welcome to **COS30045**! 🎉 This project aims to visualize data's using D3 Jav
 ## 📄 Click Me! 
 Eager to explore? Tap this [link](https://elvinny-is-coding.github.io/Data-Visualization/index.html) to visit the page! 🌐
 
-## 📦 Installation
-
-To get started with **Data Visualization in D3 JS**, follow these steps:
-
-1. **Clone the repository**: 
-    ```bash
-    git clone https://github.com/your-username/your-repo.git
-    ```
-2. **Navigate to the directory**: 
-    ```bash
-    cd your-repo
-    ```
-3. **Run the application**: 
-    ```bash
-    npm start
-    ```
 
