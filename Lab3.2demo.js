@@ -1,17 +1,19 @@
 var w = 500;
-var h = 200;
+var h = 400;
 
-var padding = 20;
+var padding = 38;
 
 var dataset = [
-  [5, 20, 12],
-  [400, 90, 22],
-  [250, 20, 23],
-  [300, 50, 12],
-  [100, 95, 16],
-  [410, 12, 12],
-  [406, 44, 10],
-  [1000, 200, 30],
+  [2, 9],
+  [3, 5],
+  [5, 17],
+  [6, 6],
+  [6, 12],
+  [7, 20],
+  [8, 22],
+  [10, 11],
+  [5, 12],
+  [6, 16],
 ];
 
 // SCALE
@@ -46,8 +48,8 @@ svg
   .append("circle")
   .attr("cx", (d) => xScale(d[0]))
   .attr("cy", (d) => yScale(d[1]))
-  .attr("r", 10)
-  .attr("fill", "slategrey");
+  .attr("r", 5)
+  .attr("fill", "cyan");
 
 // Create labels for the data point
 svg
@@ -60,3 +62,36 @@ svg
   .attr("y", (d) => yScale(d[1]) - 10)
   .attr("font-size", "10px")
   .attr("fill", "black");
+
+// Create y and x axis
+var xAxis = d3.axisBottom().ticks(5).scale(xScale);
+var yAxis = d3.axisLeft().ticks(5).scale(yScale);
+
+// insert "g" element in svg
+// apply transform to position axis
+svg
+  .append("g")
+  .attr("transform", "translate(0, " + (h - padding) + ")")
+  .call(xAxis);
+
+svg
+  .append("g")
+  .attr("transform", "translate(" + padding + ",0)")
+  .call(yAxis);
+
+// Add X axis label
+svg
+  .append("text")
+  .attr("text-anchor", "end")
+  .attr("x", w - 34)
+  .attr("y", h - 4)
+  .text("Tree Age (year)");
+
+// Y axis label:
+svg
+  .append("text")
+  .attr("text-anchor", "end")
+  .attr("transform", "rotate(-90)")
+  .attr("y", 10)
+  .attr("x", -38)
+  .text("Tree Height (m)");

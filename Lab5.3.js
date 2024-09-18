@@ -114,6 +114,6 @@ d3.select(".btn2").on("click", function () {
       return h - padding - yScale(d);
     });
 
-  // Enter selection: Append new bars for the newly added data point
+  // Append new bars for the newly added data point
   bars.exit().transition().duration(500).attr("x", w).remove();
 });

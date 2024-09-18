@@ -13,6 +13,7 @@ var dataset = [
   [406, 44, 10],
 ];
 
+// SCALE
 // Plus 10 is just the padding on the left right for x scale, top bottom for y scale
 // Domain represent the set of values you want to represent
 // Range represent the output of the values to map domain to pixel
@@ -33,9 +34,10 @@ var yScale = d3
   ])
   .range([h - padding, padding]);
 
-// Svg
+// Insert SVG to #plot
 var svg = d3.select("#plot").append("svg").attr("width", w).attr("height", h);
 
+// Create the data point and assign their attribute
 svg
   .selectAll("circle")
   .data(dataset)
@@ -46,6 +48,7 @@ svg
   .attr("r", 5)
   .attr("fill", "cyan");
 
+// Create labels for the data point
 svg
   .selectAll("text")
   .data(dataset)
@@ -57,10 +60,12 @@ svg
   .attr("font-size", "10px")
   .attr("fill", "black");
 
-// Axis
+// Create y and x axis
 var xAxis = d3.axisBottom().ticks(5).scale(xScale);
 var yAxis = d3.axisLeft().ticks(5).scale(yScale);
 
+// insert "g" element in svg
+// apply transform to position axis
 svg
   .append("g")
   .attr("transform", "translate(0, " + (h - padding) + ")")
