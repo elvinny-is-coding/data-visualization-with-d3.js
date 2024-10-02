@@ -69,6 +69,15 @@ var yAxisGroup = svg
   .attr("transform", "translate(" + padding + ",0)")
   .call(yAxis);
 
+// X-Axis
+var xAxis = d3.axisBottom(xScale).ticks(5);
+
+var xAxisGroup = svg
+  .append("g")
+  .attr("class", "x-axis")
+  .attr("transform", "translate(0, " + (h - padding) + ")")
+  .call(xAxis);
+
 // Button
 d3.select("button").on("click", function () {
   var numValues = dataset.length;

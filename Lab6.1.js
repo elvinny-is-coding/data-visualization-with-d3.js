@@ -43,7 +43,34 @@ bars
   .attr("height", function (d) {
     return h - padding - yScale(d);
   })
-  .attr("fill", "teal");
+  .attr("fill", "teal")
+  .on("mouseover", function (event, d) {
+    // Color transition on mouseover
+    d3.select(this).transition().duration(300).attr("fill", "orange");
+
+    // Calculate tooltip position: center above the bar
+    var xPosition =
+      parseFloat(d3.select(this).attr("x")) + xScale.bandwidth() / 2;
+    var yPosition = parseFloat(d3.select(this).attr("y")) + 30; // Place slightly above the bar
+
+    svg
+      .append("text")
+      .attr("id", "tooltips")
+      .attr("x", xPosition)
+      .attr("y", yPosition)
+      .text(d);
+  })
+  .on("mouseout", function () {
+    // Return to original color on mouseout
+    d3.select(this).transition().duration(300).attr("fill", "teal");
+
+    d3.select("#tooltips").remove();
+  });
+// Browser tooltips
+// .append("title")
+// .text(function (d) {
+//   return d;
+// });
 
 // Button functionality
 
@@ -85,8 +112,30 @@ function updateBars() {
       return h - padding - yScale(d);
     })
     .attr("fill", "teal")
-    .merge(bars) // Update existing bars
-    .transition()
+    .merge(bars) // Merge with existing bars
+    .on("mouseover", function (event, d) {
+      // Color transition on mouseover
+      d3.select(this).transition().duration(300).attr("fill", "orange");
+
+      // Calculate tooltip position: center above the bar
+      var xPosition =
+        parseFloat(d3.select(this).attr("x")) + xScale.bandwidth() / 2;
+      var yPosition = parseFloat(d3.select(this).attr("y")) - 10; // Place slightly above the bar
+
+      svg
+        .append("text")
+        .attr("id", "tooltips")
+        .attr("x", xPosition)
+        .attr("y", yPosition)
+        .text(d);
+    })
+    .on("mouseout", function () {
+      // Return to original color on mouseout
+      d3.select(this).transition().duration(300).attr("fill", "teal");
+
+      d3.select("#tooltips").remove();
+    })
+    .transition() // Apply transitions after setting events
     .duration(500)
     .attr("x", function (d, i) {
       return xScale(i);
