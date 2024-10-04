@@ -82,6 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "lab-2": ["2.1", "2.2", "2.3", "2.4"],
     "lab-3": ["3.1", "3.2", "3.2demo"],
     "lab-5": ["5.1", "5.2", "5.3"],
+    "lab-6": ["6.1", "6.2"],
   };
 
   const updateSubLabs = (labKey) => {
