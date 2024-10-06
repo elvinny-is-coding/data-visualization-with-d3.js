@@ -53,9 +53,11 @@ bars
       parseFloat(d3.select(this).attr("x")) + xScale.bandwidth() / 2;
     var yPosition = parseFloat(d3.select(this).attr("y")) + 30; // Place slightly above the bar
 
+    // Labels
     svg
       .append("text")
       .attr("id", "tooltips")
+      .attr("text-anchor", "middle")
       .attr("x", xPosition)
       .attr("y", yPosition)
       .text(d);
@@ -106,45 +108,45 @@ function sortBars() {
   // Update the xScale domain to reflect the new order of data
   xScale.domain(d3.range(dataset.length));
 
-  // Reposition the bars based on the sorted dataset
-  var bars = svg.selectAll("rect").data(dataset, (d, i) => d + "-" + i); // Create a unique key for each data point
+  // Rebind data to bars with a unique key (use index for consistency in sorting)
+  var bars = svg.selectAll("rect").data(dataset, (d, i) => d + "-" + i);
 
-  // Join data to bars with enter-update-exit pattern
+  // Join data with the enter-update-exit pattern
   bars.join(
     // Enter selection
     (enter) =>
       enter
         .append("rect")
         .attr("x", (d, i) => xScale(i))
-        .attr("y", (d) => yScale(d)) // Use yScale to position bars correctly
+        .attr("y", h - padding) // Start at the bottom of the chart
         .attr("width", xScale.bandwidth())
-        .attr("height", (d) => h - padding - yScale(d)) // Set height correctly
+        .attr("height", 0) // Start with height 0
         .style("fill", "teal")
         .call(
           (enter) =>
             enter
               .transition()
               .duration(1500) // Longer duration for better visibility
-              .ease(d3.easeBounce) // Add easing for a more appealing transition
+              .ease(d3.easeBounce) // Add easing for more appeal
               .attr("x", (d, i) => xScale(i)) // Position bars based on sorted order
-              .attr("y", (d) => yScale(d)) // Position using yScale
+              .attr("y", (d) => yScale(d)) // Adjust the y position based on sorted value
               .attr("height", (d) => h - padding - yScale(d)) // Adjust height correctly
         ),
     // Update selection
     (update) =>
       update
         .transition()
-        .duration(1500) // Consistent duration with the enter transition
-        .ease(d3.easeBounce) // Add easing for smoothness
-        .attr("x", (d, i) => xScale(i)) // Position bars based on sorted order
-        .attr("y", (d) => yScale(d)) // Position using yScale
-        .attr("height", (d) => h - padding - yScale(d)), // Adjust height correctly
+        .duration(1500) // Smooth transition for both position and height
+        .ease(d3.easeBounce) // Easing for smoothness
+        .attr("x", (d, i) => xScale(i)) // Update x position for sorting
+        .attr("y", (d) => yScale(d)) // Update y position based on sorted value
+        .attr("height", (d) => h - padding - yScale(d)), // Adjust height
     // Exit selection
     (exit) =>
       exit
         .transition() // Fade out before removing
         .duration(1500)
-        .ease(d3.easeCubicInOut) // Easing for exit transition
+        .ease(d3.easeCubicInOut)
         .style("opacity", 0) // Fade out
         .remove() // Remove the elements after fade-out
   );
@@ -185,9 +187,11 @@ function updateBars() {
         parseFloat(d3.select(this).attr("x")) + xScale.bandwidth() / 2;
       var yPosition = parseFloat(d3.select(this).attr("y")) - 10; // Place slightly above the bar
 
+      // Labels
       svg
         .append("text")
         .attr("id", "tooltips")
+        .attr("text-anchor", "middle")
         .attr("x", xPosition)
         .attr("y", yPosition)
         .text(d);

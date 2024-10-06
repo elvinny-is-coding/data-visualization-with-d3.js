@@ -51,10 +51,12 @@ bars
     // Calculate tooltip position: center above the bar
     var xPosition =
       parseFloat(d3.select(this).attr("x")) + xScale.bandwidth() / 2;
-    var yPosition = parseFloat(d3.select(this).attr("y")) + 30; // Place slightly above the bar
+    var yPosition = parseFloat(d3.select(this).attr("y")) + 20;
 
+    // Label
     svg
       .append("text")
+      .attr("text-anchor", "middle")
       .attr("id", "tooltips")
       .attr("x", xPosition)
       .attr("y", yPosition)
@@ -120,11 +122,13 @@ function updateBars() {
       // Calculate tooltip position: center above the bar
       var xPosition =
         parseFloat(d3.select(this).attr("x")) + xScale.bandwidth() / 2;
-      var yPosition = parseFloat(d3.select(this).attr("y")) - 10; // Place slightly above the bar
+      var yPosition = parseFloat(d3.select(this).attr("y")) + 30;
 
+      // Labels
       svg
         .append("text")
         .attr("id", "tooltips")
+        .attr("text-anchor", "middle")
         .attr("x", xPosition)
         .attr("y", yPosition)
         .text(d);
