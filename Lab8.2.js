@@ -31,25 +31,6 @@ d3.csv("COS30045_week_8/VIC_LGA_unemployment.csv").then(function (data) {
     d3.max(data, (d) => +d.unemployed),
   ]);
 
-  // Load additional CSV data for city locations
-  d3.csv("COS30045_week_8/VIC_city.csv").then(function (cityData) {
-    // Append circles to the SVG for each city in the data
-    svg
-      .selectAll("circle")
-      .data(cityData)
-      .enter()
-      .append("circle") // Add a 'circle' element for each city
-      .attr("cx", function (d) {
-        return projection([+d.lon, +d.lat])[0]; // Get x-coordinate by projecting longitude
-      })
-      .attr("cy", function (d) {
-        return projection([+d.lon, +d.lat])[1]; // Get y-coordinate by projecting latitude
-      })
-      .attr("r", 3) // Set the radius of the circles
-      .attr("fill", "red") // Set the fill color for the circles
-      .attr("stroke", "black"); // Set the stroke color for the circles
-  });
-
   // Load the GeoJSON data for the LGA
   d3.json("COS30045_week_8/LGA_VIC.json").then(function (json) {
     // Loop through the unemployment data
@@ -81,5 +62,24 @@ d3.csv("COS30045_week_8/VIC_LGA_unemployment.csv").then(function (data) {
         return value ? color(value) : "#ccc"; // Use color scale or a default color if no value
       })
       .style("stroke", "#fff"); // Set stroke color for the paths
+  });
+
+  // Load additional CSV data for city locations
+  d3.csv("COS30045_week_8/VIC_city.csv").then(function (cityData) {
+    // Append circles to the SVG for each city in the data
+    svg
+      .selectAll("circle")
+      .data(cityData)
+      .enter()
+      .append("circle") // Add a 'circle' element for each city
+      .attr("cx", function (d) {
+        return projection([+d.lon, +d.lat])[0]; // Get x-coordinate by projecting longitude
+      })
+      .attr("cy", function (d) {
+        return projection([+d.lon, +d.lat])[1]; // Get y-coordinate by projecting latitude
+      })
+      .attr("r", 3) // Set the radius of the circles
+      .attr("fill", "red") // Set the fill color for the circles
+      .attr("stroke", "black"); // Set the stroke color for the circles
   });
 });
