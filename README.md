@@ -16,7 +16,7 @@ Welcome to **COS30045**! 🎉 This project aims to visualize data's using D3 Jav
 - **Lab 6**: Mouse Over Effects and Sorting. 🤏
 - **Lab 7**: Line, Line Area, Pie, Stacked Bar Charts. 🖼️
 - **Lab 8**: Visualizing Maps. 🗺️
-- 
+
 ## 📄 Click Me! 
 Eager to explore? Tap this [link](https://elvinny-is-coding.github.io/Data-Visualization/index.html) to visit the page! 🌐
 
