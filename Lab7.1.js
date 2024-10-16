@@ -3,7 +3,7 @@ function init() {
   var h = 300;
   var padding = 60; // Add padding for the axes
 
-  d3.csv("/COS30045 1.1 Resources/Lab7.1.csv", function (d) {
+  d3.csv("COS30045 1.1 Resources/Lab7.1.csv", function (d) {
     return { date: new Date(+d.year, +d.month - 1), number: +d.number };
   }).then(function (dataset) {
     // Scales with padding
