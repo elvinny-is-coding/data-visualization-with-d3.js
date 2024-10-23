@@ -8,7 +8,7 @@ var dataset = [
 ];
 
 // Define the keys (categories)
-var keys = ["grapes", "oranges", "apples"];
+var keys = ["apples", "oranges", "grapes"];
 
 // Set up the stack function
 var stack = d3.stack().keys(keys); // Specify the keys to stack
@@ -24,6 +24,7 @@ var width = w - margin.left - margin.right;
 var height = h - margin.top - margin.bottom;
 
 // Set up color scale
+// Categorical
 var color = d3.scaleOrdinal(d3.schemeCategory10);
 
 // Define the x-scale (for positioning each bar group)

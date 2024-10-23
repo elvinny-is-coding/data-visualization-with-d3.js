@@ -4,6 +4,8 @@ var w = 300;
 
 // Create a color scale that maps unemployment data to specific colors
 // This scale will interpolate between the specified colors based on the data value
+// 0-20 → Color 1 (#f2f0f7)
+// 21-40 → Color 2 (#cbc9e2) and so on
 var color = d3
   .scaleQuantize()
   .range(["#f2f0f7", "#cbc9e2", "#9e9ac8", "#756bb1", "#54278f"]);

@@ -4,6 +4,9 @@ function init() {
   var padding = 60; // Add padding for the axes
 
   d3.csv("COS30045 1.1 Resources/Lab7.1.csv", function (d) {
+    // CVS file store value in string
+    // + allows year and month row to convert from string to number
+    // Javascript read month in 0 - 11, so -1
     return { date: new Date(+d.year, +d.month - 1), number: +d.number };
   }).then(function (dataset) {
     // Scales with padding
