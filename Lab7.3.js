@@ -17,9 +17,9 @@ var stack = d3.stack().keys(keys); // Specify the keys to stack
 var series = stack(dataset);
 
 // Define SVG dimensions
-var w = 300;
+var w = 500;
 var h = 300;
-var margin = { top: 20, right: 20, bottom: 30, left: 40 };
+var margin = { top: 20, right: 220, bottom: 30, left: 40 };
 var width = w - margin.left - margin.right;
 var height = h - margin.top - margin.bottom;
 
@@ -81,3 +81,44 @@ groups
 
 // Add the y-axis
 svg.append("g").attr("class", "axis y-axis").call(d3.axisLeft(yScale));
+
+// Add Legends
+svg
+  .append("circle")
+  .attr("cx", 300)
+  .attr("cy", 100)
+  .attr("r", 6)
+  .style("fill", "rgb(44, 160, 44)");
+svg
+  .append("circle")
+  .attr("cx", 300)
+  .attr("cy", 130)
+  .attr("r", 6)
+  .style("fill", "rgb(255, 127, 14)");
+svg
+  .append("circle")
+  .attr("cx", 300)
+  .attr("cy", 160)
+  .attr("r", 6)
+  .style("fill", "rgb(31, 119, 180)");
+svg
+  .append("text")
+  .attr("x", 320)
+  .attr("y", 100)
+  .text("apples")
+  .style("font-size", "15px")
+  .attr("alignment-baseline", "middle");
+svg
+  .append("text")
+  .attr("x", 320)
+  .attr("y", 130)
+  .text("oranges")
+  .style("font-size", "15px")
+  .attr("alignment-baseline", "middle");
+svg
+  .append("text")
+  .attr("x", 320)
+  .attr("y", 160)
+  .text("grapes")
+  .style("font-size", "15px")
+  .attr("alignment-baseline", "middle");

@@ -79,9 +79,26 @@ d3.csv("COS30045_week_8/VIC_LGA_unemployment.csv").then(function (data) {
         .attr("cy", function (d) {
           return projection([+d.lon, +d.lat])[1]; // Get y-coordinate by projecting latitude
         })
-        .attr("r", 3) // Set the radius of the circles
+        .attr("r", 5) // Set the radius of the circles
         .attr("fill", "red") // Set the fill color for the circles
-        .attr("stroke", "black"); // Set the stroke color for the circles
+        .attr("stroke", "black") // Set the stroke color for the circles
+        .on("mouseover", function (event, d) {
+          // Calculate tooltip position based on cx and cy attributes
+          var xPosition = parseFloat(d3.select(this).attr("cx"));
+          var yPosition = parseFloat(d3.select(this).attr("cy"));
+
+          // Labels
+          svg
+            .append("text")
+            .attr("id", "tooltips")
+            .attr("text-anchor", "middle")
+            .attr("x", xPosition)
+            .attr("y", yPosition - 10) // Offset the tooltip slightly above the circle
+            .text(d.place);
+        })
+        .on("mouseout", function () {
+          d3.select("#tooltips").remove();
+        });
     });
   });
 });
