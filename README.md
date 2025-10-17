@@ -18,6 +18,6 @@ Welcome to **COS30045**! 🎉 This project aims to visualize data's using D3 Jav
 - **Lab 8**: Visualizing Maps. 🗺️
 
 ## 📄 Click Me! 
-Eager to explore? Tap this [link](https://elvinny-is-coding.github.io/Data-Visualization/index.html) to visit the page! 🌐
+Eager to explore? Tap this [link](https://elvinny-is-coding.github.io/data-visualization-with-d3.js/) to visit the page! 🌐
 
 
