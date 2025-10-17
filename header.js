@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     content.forEach((item) => {
       const li = document.createElement("li");
       li.textContent = `Lab ${item}`;
-      li.setAttribute("data-url", `/Data-Visualization/Lab${item}.html`); // Store URL in data attribute
+      li.setAttribute("data-url", `/data-visualization-with-d3.js/Lab${item}.html`); // Store URL in data attribute
       subLabsList.appendChild(li);
     });
   };
@@ -124,6 +124,6 @@ if (
   window.location.hostname !== "127.0.0.1"
 ) {
   const base = document.createElement("base");
-  base.href = "/Data-Visualization/";
+  base.href = "/data-visualization-with-d3.js/";
   document.head.appendChild(base);
 }
